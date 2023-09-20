@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPersonModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<PersonModel>
+		<PersonName>Kalle Anka</PersonName>
+		<Email>kalle.anka@ankeborg.se</Email>
+		<PhoneNumber>666-777</PhoneNumber>
+		<Gender>Male</Gender>
+	</PersonModel>
+	<PersonModel>
+		<PersonName>Kajsa Anka</PersonName>
+		<Email>kajsa.anka@ankeborg.se</Email>
+		<PhoneNumber>666-888</PhoneNumber>
+		<Gender>Female</Gender>
+	</PersonModel>
+	<PersonModel>
+		<PersonName>Bengt Bedrup</PersonName>
+		<Email>bengt.bedrup@noname.se</Email>
+		<PhoneNumber>000-111</PhoneNumber>
+		<Gender>Male</Gender>
+	</PersonModel>
+</ArrayOfPersonModel>
