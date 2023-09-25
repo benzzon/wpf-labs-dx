@@ -15,10 +15,11 @@ namespace LabsUI.Models
         [Required(ErrorMessage = "You must provide a name.")]
         [StringLength(200, MinimumLength = 3,
         ErrorMessage = "The name must be at least 3 characters long")]
-        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "The name must only contain letters (a-z, A-Z).")] 
+        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "The name must only contain letters (a-z, A-Z).")] 
         public virtual string PersonName { get; set; }
 
         [BindableProperty]
+        [Required(ErrorMessage = "You must provide a mail-address.")]
         [EmailAddress(ErrorMessage = "Invalid email address.")]
         public virtual string Email { get; set; }
 
