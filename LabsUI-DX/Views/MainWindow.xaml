@@ -40,13 +40,16 @@
         </Grid.ColumnDefinitions>
         
         <Label Grid.Row="1" Grid.Column="1" Content="Name"></Label>
-            <TextBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" Text="{Binding SelectedPerson.PersonName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" 
+                     Text="{Binding SelectedPerson.PersonName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
 
         <Label Grid.Row="2" Grid.Column="1" Content="E-mail"></Label>
-            <TextBox Grid.Row="2" Grid.Column="2"  Grid.ColumnSpan="1" HorizontalAlignment="Stretch" Text="{Binding SelectedPerson.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="2" Grid.Column="2"  Grid.ColumnSpan="1" HorizontalAlignment="Stretch" 
+                     Text="{Binding SelectedPerson.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
 
         <Label Grid.Row="3" Grid.Column="1" Content="Phone"></Label>
-            <TextBox Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" Width="200" Text="{Binding SelectedPerson.PhoneNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" Width="200" 
+                     Text="{Binding SelectedPerson.PhoneNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
 
         <Label Grid.Row="4" Grid.Column="1" Content="Gender"></Label>
         <ComboBox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="100"
