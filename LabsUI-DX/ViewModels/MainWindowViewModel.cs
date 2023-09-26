@@ -21,7 +21,7 @@ using System;
 namespace LabsUI.ViewModels
 {
     [POCOViewModel]
-    public class MainWindowViewModel
+    public class MainWindowViewModel : ViewModelBase
     {
         public ObservableCollection<PersonModel> People { get; set; } = new ObservableCollection<PersonModel>();
 
@@ -42,11 +42,17 @@ namespace LabsUI.ViewModels
             People = new ObservableCollection<PersonModel>();
 
             // Initialize the SelectedPerson
-            SelectedPerson = new PersonModel();
+            //SelectedPerson = new PersonModel();
 
             genders = new string[] { "Male", "Female" };
         }
 
+        public ICommand DoNewCommand => new DelegateCommand(DoNew);
+        private void DoNew()
+        {
+            SelectedPerson = new PersonModel();
+            RaisePropertyChanged(nameof(SelectedPerson));
+        }
         public ICommand DoAddCommand => new DelegateCommand(DoAdd);
         private void DoAdd()
         {
