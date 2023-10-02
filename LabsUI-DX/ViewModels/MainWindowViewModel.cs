@@ -21,16 +21,23 @@ using System;
 namespace LabsUI.ViewModels
 {
     [POCOViewModel]
-    public class MainWindowViewModel : ViewModelBase
+    public class MainWindowViewModel : BindableBase
     {
         public ObservableCollection<PersonModel> People { get; set; } = new ObservableCollection<PersonModel>();
 
         const double defaultWinHeight = 300;
         const double defaultWinWidth = 600;
 
+        private PersonModel _selectedP;
         [BindableProperty]
-        public virtual PersonModel SelectedPerson { get; set; }
-
+        public virtual PersonModel SelectedPerson
+        {
+            get { return _selectedP; }
+            set { 
+                SetProperty(ref _selectedP, value, nameof(_selectedP));
+                RaisePropertyChanged(nameof(SelectedPerson));
+            }
+        }
         public MainWindowViewModel()
         {
             Application.Current.MainWindow.Left = LabsUI.Properties.Settings.Default.WinLeft;
