@@ -4,6 +4,7 @@ using DevExpress.Mvvm.CodeGenerators;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm;
 using LabsUI.Models;
+using Notifications.Wpf.Core;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -59,7 +60,22 @@ namespace LabsUI.ViewModels
         {
             SelectedPerson = new PersonModel();
             RaisePropertyChanged(nameof(SelectedPerson));
+            ShowNotification("New Person", "Enter person data, and then click the button 'Add'.", NotificationType.Information);
         }
+        private async void ShowNotification(string title, string message, NotificationType notifType)
+        {
+            NotificationManager notificationManager = new NotificationManager();
+
+            var notificationContent = new NotificationContent
+            {
+                Title = title,
+                Message = message,
+                Type = notifType
+            };
+
+            await notificationManager.ShowAsync(notificationContent, areaName: "WindowArea");
+        }
+
         public ICommand DoAddCommand => new DelegateCommand(DoAdd);
         private void DoAdd()
         {
@@ -81,6 +97,7 @@ namespace LabsUI.ViewModels
 
             // Clear the input fields
             SelectedPerson = new PersonModel();
+            ShowNotification("Added person", "Person was added to the list of persons..", NotificationType.Success);
         }
 
         public ICommand DoDeleteCommand => new DelegateCommand(DoDelete);
@@ -88,6 +105,7 @@ namespace LabsUI.ViewModels
         {
             People.Remove(SelectedPerson);
             SelectedPerson = new PersonModel(); // Clear the input fields
+            ShowNotification("Deleted person", "Person was removed from the list of persons..", NotificationType.Warning);
         }
 
         public ICommand DoLoadCommand => new DelegateCommand(DoLoad);
@@ -111,6 +129,7 @@ namespace LabsUI.ViewModels
             {
                 MessageBox.Show(ex.Message, "An error occurred..");
             }
+            ShowNotification("Loaded persons", "Data was loaded to the list of persons..", NotificationType.Success);
         }
 
         public ICommand DoSaveCommand => new DelegateCommand(DoSave);
@@ -129,6 +148,7 @@ namespace LabsUI.ViewModels
             }
 
             CollectionViewSource.GetDefaultView(People).Refresh(); // Force refresh of grid to show any changes to person-fields..
+            ShowNotification("Saved persons", "Data for persons was saved..", NotificationType.Success);
         }
 
         public ICommand DoSearchCommand => new DelegateCommand<string>(DoSearch);

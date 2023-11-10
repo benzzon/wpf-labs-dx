@@ -11,6 +11,23 @@
                 <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="DeepPurple" SecondaryColor="Lime" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <!-- Primary hues, https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit/wiki/Custom-Palette-Hues  -->
+            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#aaccee"/>
+            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="Black"/>
+            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Blue"/>
+            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="White"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#cc6633"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="White"/>
+
+            <!-- Secondary hues -->
+            <SolidColorBrush x:Key="SecondaryHueLightBrush" Color="#aaddbb"/>
+            <SolidColorBrush x:Key="SecondaryHueLightForegroundBrush" Color="Black"/>
+            <SolidColorBrush x:Key="SecondaryHueMidBrush" Color="#aa77ee"/>
+            <SolidColorBrush x:Key="SecondaryHueMidForegroundBrush" Color="#222222"/>
+            <SolidColorBrush x:Key="SecondaryHueDarkBrush" Color="#669977"/>
+            <SolidColorBrush x:Key="SecondaryHueDarkForegroundBrush" Color="White"/>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
