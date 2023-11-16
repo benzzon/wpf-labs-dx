@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Overriding MaterialDesign Colors, Primary Hues, https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit/wiki/Custom-Palette-Hues  -->
+    <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#aaccee"/>
+    <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="Black"/>
+    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Blue"/>
+    <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="White"/>
+    <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#cc6633"/>
+    <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="White"/>
+
+    <!-- Secondary hues -->
+    <SolidColorBrush x:Key="SecondaryHueLightBrush" Color="#aaddbb"/>
+    <SolidColorBrush x:Key="SecondaryHueLightForegroundBrush" Color="Black"/>
+    <SolidColorBrush x:Key="SecondaryHueMidBrush" Color="#aa77ee"/>
+    <SolidColorBrush x:Key="SecondaryHueMidForegroundBrush" Color="#222222"/>
+    <SolidColorBrush x:Key="SecondaryHueDarkBrush" Color="#669977"/>
+    <SolidColorBrush x:Key="SecondaryHueDarkForegroundBrush" Color="White"/>
+
+</ResourceDictionary>
